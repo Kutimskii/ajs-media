@@ -29,7 +29,6 @@ describe("Credit Card Validator form", () => {
     page.on("dialog", async (dialog) => {
       console.log("dialog");
       await dialog.accept();
-      await dialog.type();
     });
   });
   test("check written geolocation with space", async () => {
