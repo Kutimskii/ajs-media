@@ -141,7 +141,7 @@ export default class Timeline {
       const { longitude, latitude } = position.coords;
       const coordinates = document.createElement("div");
       coordinates.classList.add("coordinates");
-      coordinates.textContent = `${longitude} - ${latitude}`;
+      coordinates.textContent = `${longitude}, ${latitude}`;
       this.post.insertAdjacentElement("beforeend", coordinates);
     };
     const error = () => {

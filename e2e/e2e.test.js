@@ -42,7 +42,7 @@ describe("Credit Card Validator form", () => {
     await page.setGeolocation({ latitude: 90, longitude: 0 });
     const inputModal = await page.$(".modal__input");
     const btnOkModal = await page.$(".btn_ok");
-    await inputModal.type("51.50851, −0.12572");
+    await inputModal.type("51.50851,0.12572");
     await btnOkModal.click();
   });
   test("check written geolocation without space", async () => {
@@ -55,7 +55,7 @@ describe("Credit Card Validator form", () => {
     await page.setGeolocation({ latitude: 90, longitude: 0 });
     const inputModal = await page.$(".modal__input");
     const btnOkModal = await page.$(".btn_ok");
-    await inputModal.type("51.50851,−0.12572");
+    await inputModal.type("51.50851,-0.12572");
     await btnOkModal.click();
   });
   test("check written geolocation without brackets", async () => {
@@ -68,7 +68,7 @@ describe("Credit Card Validator form", () => {
     await page.setGeolocation({ latitude: 90, longitude: 0 });
     const inputModal = await page.$(".modal__input");
     const btnOkModal = await page.$(".btn_ok");
-    await inputModal.type("[51.50851,−0.12572]");
+    await inputModal.type("[-51.50851,-0.12572]");
     await btnOkModal.click();
   });
 
