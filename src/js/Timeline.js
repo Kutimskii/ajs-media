@@ -83,7 +83,6 @@ export default class Timeline {
     let resetBtnVideo = document.querySelector(".btn__video_stop");
     let seconds = 0;
     let minutes = 0;
-    let hours = 0;
     let interval;
     startBtnAudio.addEventListener("click", () => {
       startBtnAudio.insertAdjacentElement("afterend", this.timer);

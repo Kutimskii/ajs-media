@@ -21,7 +21,7 @@ describe("Credit Card Validator form", () => {
     });
 
     browser = await puppetteer.launch({
-      headless: 'new',  // show gui
+      headless: "new", // show gui
       slowMo: 10,
       devtools: false, // show devTools
     });
@@ -29,16 +29,16 @@ describe("Credit Card Validator form", () => {
     page.on("dialog", async (dialog) => {
       console.log("dialog");
       await dialog.accept();
-      await dialog.type()
+      await dialog.type();
     });
   });
   test("check written geolocation with space", async () => {
     const context = browser.defaultBrowserContext();
-    await context.overridePermissions(baseUrl, ['geolocation']);
+    await context.overridePermissions(baseUrl, ["geolocation"]);
     await page.goto(baseUrl);
     const input = await page.$("input");
     await input.type("1235");
-    await page.keyboard.press('Enter');
+    await page.keyboard.press("Enter");
     await page.setGeolocation({ latitude: 90, longitude: 0 });
     const inputModal = await page.$(".modal__input");
     const btnOkModal = await page.$(".btn_ok");
@@ -47,11 +47,11 @@ describe("Credit Card Validator form", () => {
   });
   test("check written geolocation without space", async () => {
     const context = browser.defaultBrowserContext();
-    await context.overridePermissions(baseUrl, ['geolocation']);
+    await context.overridePermissions(baseUrl, ["geolocation"]);
     await page.goto(baseUrl);
     const input = await page.$("input");
     await input.type("1235");
-    await page.keyboard.press('Enter');
+    await page.keyboard.press("Enter");
     await page.setGeolocation({ latitude: 90, longitude: 0 });
     const inputModal = await page.$(".modal__input");
     const btnOkModal = await page.$(".btn_ok");
@@ -60,11 +60,11 @@ describe("Credit Card Validator form", () => {
   });
   test("check written geolocation without brackets", async () => {
     const context = browser.defaultBrowserContext();
-    await context.overridePermissions(baseUrl, ['geolocation']);
+    await context.overridePermissions(baseUrl, ["geolocation"]);
     await page.goto(baseUrl);
     const input = await page.$("input");
     await input.type("1235");
-    await page.keyboard.press('Enter');
+    await page.keyboard.press("Enter");
     await page.setGeolocation({ latitude: 90, longitude: 0 });
     const inputModal = await page.$(".modal__input");
     const btnOkModal = await page.$(".btn_ok");
@@ -72,7 +72,7 @@ describe("Credit Card Validator form", () => {
     await btnOkModal.click();
   });
 
-  afterEach (async () => {
+  afterEach(async () => {
     await browser.close();
     await server.kill();
   });
